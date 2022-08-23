@@ -1,7 +1,6 @@
-import {photos} from './data.js';
+import { renderPhotos } from './preview.js';
 
-
-console.log(photos);
+renderPhotos();
 
 
 
