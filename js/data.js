@@ -40,6 +40,19 @@ const comments = [
   'Как можно было поймать такой неудачный момент?!',
 ]
 
+const addComments = () => {
+  const commentsArr = [];
+    for (let i = 0; i < getRandomInt(3, 10); i++) {
+      commentsArr.push({
+        id: getRandomInt(0, 999),
+        avatar: 'img/avatar-' + getRandomInt(1, 6) + '.svg',
+        message: getRandomElementArr(comments),
+        name: getRandomElementArr(names),
+    })
+    return commentsArr
+  }
+}
+
 const addPhotos = () => {
   for (let i = 0; i < numberOfPhotos; i++) {
     photos.push({
@@ -47,12 +60,7 @@ const addPhotos = () => {
       url: 'photos/' + (i + 1) + '.jpg',
       description: getRandomElementArr(descriptionPhoto),
       likes: getRandomInt(likes.MIN, likes.MAX),
-      comments: [{
-        id: getRandomInt(0, 999),
-        avatar: 'img/avatar-' + getRandomInt(1, 6) + '.svg',
-        message: getRandomElementArr(comments),
-        name: getRandomElementArr(names),
-      }],
+      comments: addComments(),
     })
   }
 }

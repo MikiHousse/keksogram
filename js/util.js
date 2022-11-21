@@ -18,7 +18,7 @@ const stringCount = (text, sing) => {
   return text.lenght <= sing ? true : false;
 };
 
-console.log(stringCount('Это новый текст', 100));
+// console.log(stringCount('Это новый текст', 100));
 
 // Случайный элемент масива
 const getRandomElementArr = (array) => {
