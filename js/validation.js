@@ -78,4 +78,4 @@ const onEscapeDown = (evt) => {
   }
 
 inputHashtag.addEventListener('keydown', onEscapeDown)
-inputComment.addEventListener('keydown', onEscapeDown)
+ inputComment.addEventListener('keydown', onEscapeDown)

@@ -25,4 +25,8 @@ const getRandomElementArr = (array) => {
   return array[getRandomInt(0, array.length - 1)];
 }
 
-export { getRandomInt, stringCount, getRandomElementArr };
+const checkEsc = (evt) => {
+  return evt.key === Keys.ESC || evt.key === Keys.ESCAPE;
+}
+
+export { getRandomInt, stringCount, getRandomElementArr, checkEsc };

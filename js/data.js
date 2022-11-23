@@ -1,4 +1,4 @@
-import { getRandomInt, getRandomElementArr } from './util.js';
+// import { getRandomInt, getRandomElementArr } from './util.js';
 
 const photos = [];
 const numberOfPhotos = 25;
@@ -66,4 +66,4 @@ const addPhotos = () => {
 }
 addPhotos();
 
-export default photos;
+// export default photos;
