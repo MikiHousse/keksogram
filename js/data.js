@@ -1,6 +1,6 @@
 import { getRandomInt, getRandomElementArr } from './util.js';
 
-let photos = [];
+const photos = [];
 const numberOfPhotos = 25;
 const likes = {
   MIN: 15,
@@ -49,8 +49,8 @@ const addComments = () => {
         message: getRandomElementArr(comments),
         name: getRandomElementArr(names),
     })
-    return commentsArr
   }
+  return commentsArr
 }
 
 const addPhotos = () => {

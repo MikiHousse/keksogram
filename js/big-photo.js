@@ -9,16 +9,17 @@ commentsCount.classList.add('hidden');
 commentsLoader.classList.add('hidden');
 
 const onBigPictureCloseClick = () => {
-    bigPicture.classList.add('hidden');
-    scrollOff.classList.remove('modal-open');
-    bigPictureClose.removeEventListener('click', onBigPictureCloseClick);
-    commentList.innerHTML = '';
-  };
+  bigPicture.classList.add('hidden');
+  scrollOff.classList.remove('modal-open');
+  bigPictureClose.removeEventListener('click', onBigPictureCloseClick);
+  commentList.innerHTML = '';
+};
+
 
 //.content.querySelector('.social__comment')
 // генерируем коментарии
 const commentTemplate = document.querySelector('#comment');
-const commentList = document.querySelector('.social__comments')
+const commentList = document.querySelector('.social__comments');
 
 const renderComment = (comment) => {
   const commentSimilar = commentTemplate.cloneNode(true);
@@ -41,16 +42,16 @@ const renderComments = (comments) => {
 }
 
 const show = (picture) => {
-    scrollOff.classList.add('modal-open');
-    bigPicture.querySelector('.big-picture__img > img').src = picture.url;
-    bigPicture.querySelector('.likes-count').textContent = picture.likes;
-    bigPicture.querySelector('.comments-count').textContent = picture.comments;
-    bigPicture.querySelector('.social__caption').textContent = picture.description;
+  scrollOff.classList.add('modal-open');
+  bigPicture.querySelector('.big-picture__img > img').src = picture.url;
+  bigPicture.querySelector('.likes-count').textContent = picture.likes;
+  bigPicture.querySelector('.comments-count').textContent = picture.comments.length;
+  bigPicture.querySelector('.social__caption').textContent = picture.description;
 
-    bigPictureClose.addEventListener('click', onBigPictureCloseClick);
-    bigPicture.classList.remove('hidden');
+  bigPictureClose.addEventListener('click', onBigPictureCloseClick);
+  bigPicture.classList.remove('hidden');
 
-    renderComments(picture.comments)
-}
+  renderComments(picture.comments)
+};
 
 export {show};

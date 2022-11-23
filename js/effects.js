@@ -59,16 +59,15 @@ effectRadioGroup.addEventListener('click', onEffectRadioGroupClick)
 
 window.noUiSlider.create(effectLevelSlider, {
     range: {
-        min: Slider.MIN,
-        max: Slider.MAX,
+      min: Slider.MIN,
+      max: Slider.MAX,
     },
     start: Slider.MAX,
     connect: 'lower',
-});
-
-effectLevelSlider.noUiSlider.on('change', () => {
+  });
+  
+  effectLevelSlider.noUiSlider.on('change', () => {
     effectLevelValue.value = effectLevelSlider.noUiSlider.get();
-    uploadPreviewImg.style.filter = effect[lastClass.replace('effects__preview', '')]();
-});
-
-export {effectLevel, lastClass};
+  
+    uploadPreviewImg.style.filter = effects[lastClass.replace('effects__preview--', '')]();
+  });

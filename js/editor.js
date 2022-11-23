@@ -1,5 +1,3 @@
-import {effectLevel, lastClass} from "./effects.js";
-
 const Keys = {
     ESC: 'Esc',
     ESCAPE: 'Escape',
@@ -47,38 +45,32 @@ const scaleValue = uploadModal.querySelector('.scale__control--value');
 const imagePreview = uploadModal.querySelector('.img-upload__preview > img');
 
 const resetSettings = () => {
-    imagePreview.style = 'transform: scale(1:00)';
-    imagePreview.style.filter = '';
-    if (lastClass) {
-        imagePreview.classList.remove(lastClass);
-    }
-
+    imagePreview.style = 'transform: scale(1.00)'
     scaleValue.value = '100%';
-    effectLevel.classList.add('visually-hidden');
-}
-
-buttonPlus.addEventListener('click', () => {
+  }
+  
+  buttonPlus.addEventListener('click', () => {
     let scale = parseInt(scaleValue.value, 10) + Scale.STEP;
-
+  
     if (scale >= Scale.MAX) {
-        scale = Scale.MAX;
+      scale = Scale.MAX;
     }
-
+  
     scaleValue.value = scale + '%';
     scale = scale / 100;
-    imagePreview.style.transform = 'scale('+ scale +')';
-})
-
-buttonMinus.addEventListener('click', () => {
+    imagePreview.style.transform = 'scale(' + scale + ')';
+  })
+  
+  buttonMinus.addEventListener('click', () => {
     let scale = parseInt(scaleValue.value, 10) - Scale.STEP;
-
+  
     if (scale <= Scale.MIN) {
-        scale = Scale.MIN;
+      scale = Scale.MIN;
     }
-
+  
     scaleValue.value = scale + '%';
     scale = scale / 100;
-    imagePreview.style.transform = 'scale('+ scale +')';
-})
+    imagePreview.style.transform = 'scale(' + scale + ')';
+  })
 
 
